@@ -1,69 +1,92 @@
-nav{
-width: 100%;
-color: #fff;
-padding: 4px 0;
-top:0;
-left:0;
-position: fixed;
-display: flex;
-align-items: center;
-justify-content: space-between;
-z-index: 10;
-}
- .logo {
-width: 180px;
- }
- nav ul li {
-display: inline-block;
-list-style: none;
-margin:5px 20px;
-font-size: 16px;
- }
-.dark-nav {
-background: #212eA0;
-transition: 0.5s;
-}
-.menu_icon{
-display: none;
-}
-/* @media query */
-@media (max-width:1000px) {
-.logo{
-width: 140px;
-}
-nav ul li {
-margin: 10px 15px;
-}
-}
-/* @media query */
-@media (max-width:840px) {
+/* General navbar styling */
 nav {
-padding: 15px 0;
+  width: 100%;
+  color: #fff;
+  padding: 4px 0;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
 }
-nav ul{
-position: fixed;
-top:0;
-right: -200px;
-bottom: 0;
-background: #212eA0;
-z-index: -1;
-width: 200px;
-padding-top: 70px;
-transition: 0.5s;
+
+/* Logo */
+.logo {
+  width: 180px;
 }
-nav ul li{
-display: block;
-margin: 25px 40px;
+
+/* Nav list styling (desktop by default) */
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
 }
-.menu_icon{
-display: block;
-width: 30px;
-cursor: pointer;
+
+/* Nav list items */
+nav ul li {
+  list-style: none;
+  margin: 5px 20px;
+  font-size: 16px;
 }
-.hide-mobile-menu{
-width: -200px;
+
+/* Dark navbar on scroll */
+.dark-nav {
+  background: #212eA0;
+  transition: 0.5s;
 }
-.show {
-   right: 0; /* Show the menu */
-     }
+
+/* Hide menu icon by default (desktop) */
+.menu_icon {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 840px) {
+  nav {
+    padding: 15px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    bottom: 0;
+    background: #212eA0;
+    z-index: 9;
+    width: 200px;
+    padding-top: 70px;
+    transition: right 0.5s;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 30px;
+  }
+
+  /* Mobile menu toggle classes */
+  .show {
+    right: 0;
+  }
+
+  .hide-mobile-menu {
+    right: -200px;
+  }
+
+  /* Show the menu icon */
+  .menu_icon {
+    display: block;
+    width: 30px;
+    cursor: pointer;
+  }
+}
+
+/* Optional: Remove default list styling globally */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
